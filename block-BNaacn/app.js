@@ -1,0 +1,17 @@
+var express = require("express");
+var mongoose = require("mongoose");
+
+var app = express();
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/sample", {})
+  .then(() => {
+    console.log("Connected Successfully");
+  })
+  .catch((err) => {
+    console.log("Error Connecting", err);
+  });
+
+app.listen(3000, () => {
+  console.log("Server listening to port 3000");
+});
