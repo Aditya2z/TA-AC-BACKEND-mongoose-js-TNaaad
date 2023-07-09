@@ -8,5 +8,7 @@ var userSchema = new Schema({
     email: {type:String, lowercase: true},
     objectId: Schema.objectId,
     favorites: [String],
-    marks: [Number]
+    marks: [Number],
+    password: {type: String, minlength: 5, maxlength: 20},
+    createdAt: {type: Date, default: Date.now}
 }, {timeStamps: true});
